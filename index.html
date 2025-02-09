@@ -2,303 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Result Portal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="std.css">
-  <style>
-    /* Existing styles remain unchanged */
-    
-    /* Responsive Design Improvements */
-    @media (max-width: 576px) {
-      /* Header responsive */
-      .header-logo {
-        width: 80px !important;
-        height: auto !important;
-      }
-      
-      .header-title {
-        font-size: 1.2rem !important;
-      }
-      
-      .header-subtitle {
-        font-size: 0.8rem !important;
-      }
-      
-      /* Form responsive */
-      #resultForm .row {
-        flex-direction: column;
-      }
-      
-      #resultForm .col-md-4,
-      #resultForm .col-md-3 {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      
-      /* Table responsive */
-      .table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      .table td, 
-      .table th {
-        min-width: 120px;
-        white-space: nowrap;
-      }
-      
-      /* Cards responsive */
-      .card {
-        margin-bottom: 1rem;
-        padding: 15px !important;
-      }
-      
-      .admission-card h4 {
-        font-size: 1.2rem;
-      }
-      
-      /* Notice board responsive */
-      .notice-board li p {
-        font-size: 0.9rem;
-      }
-
-      .container {
-        padding: 0 10px;
-      }
-
-      #resultForm .row > div {
-        margin-bottom: 10px;
-      }
-
-      .btn-success {
-        width: 100%;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      /* Navigation responsive */
-      .navbar-nav {
-        text-align: center;
-        gap: 0 !important;
-      }
-      
-      .navbar-nav .nav-item {
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-      
-      .dropdown-menu {
-        text-align: center;
-        border: none;
-        background: rgba(0,0,0,0.1);
-      }
-      
-      /* Result display responsive */
-      .student-info .row {
-        flex-direction: column;
-      }
-      
-      .student-info .col-md-6 {
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-      
-      /* Department list responsive */
-      .department-list li {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-      }
-
-      header .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header-logo {
-        margin-bottom: 10px;
-      }
-
-      .col-lg-8, .col-lg-4 {
-        margin-bottom: 20px;
-      }
-
-      .table {
-        font-size: 14px;
-      }
-
-      .department-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-    }
-    
-    @media (max-width: 992px) {
-      /* Main layout responsive */
-      .container {
-        padding: 0 15px;
-      }
-      
-      .row {
-        margin: 0 -15px;
-      }
-      
-      /* Footer responsive */
-      .footer {
-        text-align: center;
-      }
-      
-      .footer p {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-      }
-
-      .navbar-collapse {
-        background: var(--primary-color);
-        padding: 10px;
-        border-radius: 5px;
-      }
-    }
-
-    /* Fix for table responsiveness */
-    .table-responsive {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-
-    .table {
-      margin-bottom: 0;
-    }
-
-    /* Fix for dropdown menus */
-    .dropdown-menu {
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Fix for notice board */
-    .notice-board li {
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      padding: 10px 0;
-    }
-
-    .notice-board li:last-child {
-      border-bottom: none;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="bg-dark text-white py-4" style="background-color: #4F5B62;">
-    <div class="container d-flex align-items-center">
-        <img src="logo-white.png" alt="Logo" class="me-3 header-logo" width="140" height="150">
+  <header>
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <img src="logo-white.png" alt="Logo" class="header-logo">
         <div>
-            <h1 class="mb-0 header-title" style="color: #f8f9fa!important;">Leading University</h1>
-            <p class="mb-0 header-subtitle" style="color: #ced4da!important;">...A Promise to Lead</p>
+          <h1 class="header-title">Leading University</h1>
+          <p class="header-subtitle">...A Promise to Lead</p>
         </div>
+      </div>
     </div>
-</header>
+  </header>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav gap-4">
-                <!-- Home -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Home
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-                        <li><a class="dropdown-item" href="#">Overview</a></li>
-                        <li><a class="dropdown-item" href="#">News & Events</a></li>
-                        <li><a class="dropdown-item" href="#">Contact</a></li>
-                    </ul>
-                </li>
-
-                <!-- About Us -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        About Us
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <li><a class="dropdown-item" href="#">Mission & Vision</a></li>
-                        <li><a class="dropdown-item" href="#">History</a></li>
-                        <li><a class="dropdown-item" href="#">Leadership</a></li>
-                    </ul>
-                </li>
-
-                <!-- Admission -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Admission
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                        <li><a class="dropdown-item" href="#">Undergraduate</a></li>
-                        <li><a class="dropdown-item" href="#">Graduate</a></li>
-                        <li><a class="dropdown-item" href="#">Scholarships</a></li>
-                    </ul>
-                </li>
-
-                <!-- Faculty -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Faculty
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
-                        <li><a class="dropdown-item" href="#">Department of CSE</a></li>
-                        <li><a class="dropdown-item" href="#">Department of Civil Engineering</a></li>
-                        <li><a class="dropdown-item" href="#">Department of Business Administration</a></li>
-                        <li><a class="dropdown-item" href="#">Department of English</a></li>
-                        <li><a class="dropdown-item" href="#">Department of Architecture</a></li>
-                    </ul>
-                </li>
-
-                <!-- Student Portal -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="studentPortalDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Student Portal
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="studentPortalDropdown">
-                        <li><a class="dropdown-item" href="#">Login</a></li>
-                        <li><a class="dropdown-item" href="#">Course Registration</a></li>
-                        <li><a class="dropdown-item" href="#">Results</a></li>
-                    </ul>
-                </li>
-
-                <!-- Library -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="libraryDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Library
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="libraryDropdown">
-                        <li><a class="dropdown-item" href="#">Digital Library</a></li>
-                        <li><a class="dropdown-item" href="#">Book Catalog</a></li>
-                        <li><a class="dropdown-item" href="#">Research Papers</a></li>
-                    </ul>
-                </li>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-4">
+          <!-- Home -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+              <li><a class="dropdown-item" href="#">Overview</a></li>
+              <li><a class="dropdown-item" href="#">News & Events</a></li>
+              <li><a class="dropdown-item" href="#">Contact</a></li>
             </ul>
-        </div>
+          </li>
+
+          <!-- About Us -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="#">Mission & Vision</a></li>
+              <li><a class="dropdown-item" href="#">History</a></li>
+              <li><a class="dropdown-item" href="#">Leadership</a></li>
+            </ul>
+          </li>
+
+          <!-- Admission -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="admissionDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Admission
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
+              <li><a class="dropdown-item" href="#">Undergraduate</a></li>
+              <li><a class="dropdown-item" href="#">Graduate</a></li>
+              <li><a class="dropdown-item" href="#">Scholarships</a></li>
+            </ul>
+          </li>
+
+          <!-- Faculty -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Faculty
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="facultyDropdown">
+              <li><a class="dropdown-item" href="#">Department of CSE</a></li>
+              <li><a class="dropdown-item" href="#">Department of Civil Engineering</a></li>
+              <li><a class="dropdown-item" href="#">Department of Business Administration</a></li>
+              <li><a class="dropdown-item" href="#">Department of English</a></li>
+              <li><a class="dropdown-item" href="#">Department of Architecture</a></li>
+            </ul>
+          </li>
+
+          <!-- Student Portal -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="studentPortalDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Student Portal
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="studentPortalDropdown">
+              <li><a class="dropdown-item" href="#">Login</a></li>
+              <li><a class="dropdown-item" href="#">Course Registration</a></li>
+              <li><a class="dropdown-item" href="#">Results</a></li>
+            </ul>
+          </li>
+
+          <!-- Library -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="libraryDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Library
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="libraryDropdown">
+              <li><a class="dropdown-item" href="#">Digital Library</a></li>
+              <li><a class="dropdown-item" href="#">Book Catalog</a></li>
+              <li><a class="dropdown-item" href="#">Research Papers</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
   <!-- Main Section -->
-  <main class="container my-5">
-    <div class="row">
+  <main class="container my-4 my-md-5">
+    <div class="row g-4">
       <!-- Left Section -->
       <div class="col-lg-8">
         <div class="card p-4 shadow">
@@ -306,19 +124,17 @@
           <form id="resultForm">
             <div class="row g-3 align-items-center">
               <div class="col-md-4">
-                
                 <input type="text" id="studentId" class="form-control" placeholder="Student ID">
               </div>
               <div class="col-md-4">
-                
                 <input type="text" id="dob" class="form-control" placeholder="Date of Birth (y-m-d)">
               </div>
               <div class="col-md-3">
-                <button type="button" class="btn btn-success" id="fetchResult">Fetch Results</button>
+                <button type="button" class="btn btn-success w-100" id="fetchResult">Fetch Results</button>
               </div>
             </div>
           </form>
-          <div id="resultDisplay" class="mt-4"></div>
+          <div id="resultDisplay" class="mt-4 table-responsive"></div>
         </div>
       </div>
 
@@ -380,22 +196,24 @@
       </div>
     </div>
   </main>
-  <footer class="footer py-4">
+  <footer class="footer py-4 mt-auto">
     <div class="container">
-      <div class="row">
-        <h5 style="color: #FFEB3B; font-family: Arial, Helvetica, sans-serif; margin-bottom: 10px;">Contact</h5>
-        <p style="color: #EEEEEE; font-family: Arial, Helvetica, sans-serif; line-height: 1.5;"> 
+      <div class="row g-4">
+        <div class="col-12">
+          <h5 style="color: #FFEB3B; font-family: Arial, Helvetica, sans-serif; margin-bottom: 10px;">Contact</h5>
+          <p style="color: #EEEEEE; font-family: Arial, Helvetica, sans-serif; line-height: 1.5;"> 
             Leading University<br>
             Ragibnagar, South Surma, Sylhet-3112<br>
-            Phone: 01313084499.<br>
+            Phone: 01313084499<br>
             Email: info@lus.ac.bd
-        </p>
-        
-        
-      </div>
-      <div class="text-center mt-4">
-        <p class="mb-0">© Copyright 2025 Leading University, all rights reserved. Developed by HuddleByte.</p>
-          <p>This site is maintained by CSE & IT Department.</p>
+          </p>
+        </div>
+        <div class="col-12">
+          <div class="text-center">
+            <p class="mb-0">© Copyright 2025 Leading University, all rights reserved. Developed by HuddleByte.</p>
+            <p>This site is maintained by CSE & IT Department.</p>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -405,21 +223,14 @@
     document.getElementById('fetchResult').addEventListener('click', function() {
       const resultDisplay = document.getElementById('resultDisplay');
       resultDisplay.innerHTML = `
-        <div class="card p-4 mb-4 result-card">
-          <div class="student-info">
-            <h4 class="mb-4 text-primary">Student Information</h4>
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <p><strong>Student ID:</strong> 0182220012101106</p>
-                <p><strong>Name:</strong> Md. Ariful Hasan</p>
-                <p><strong>Program:</strong> B. Sc. in Computer Science & Engineering</p>
-              </div>
-              <div class="col-12 col-md-6">
-                <p><strong>CGPA:</strong> <span class="badge bg-success">3.75</span> <strong>Grade:</strong> <span class="badge bg-primary">A</span></p>
-                <p><strong>Department:</strong> Computer Science & Engineering</p>
-                <p><strong>Credit Completed:</strong> 101.5</p>
-              </div>
-            </div>
+        <div class="card p-3 shadow mb-4">
+          <div class="table-responsive">
+            <p><strong>Student ID:</strong> 0182220012101106</p>
+            <p><strong>CGPA:</strong> 3.75 &nbsp; <strong>Grade:</strong> A</p>
+            <p><strong>Name:</strong> Md. Ariful Hasan</p>
+            <p><strong>Program:</strong> B. Sc. in Computer Science & Engineering</p>
+            <p><strong>Department:</strong> Computer Science & Engineering</p>
+            <p><strong>Semester:</strong> Fall-2022 &nbsp; <strong>Credit Completed:</strong> 101.5</p>
           </div>
         </div>
 
@@ -517,12 +328,12 @@
               </tr>
             </thead>
             <tbody>
-                    <tr>
-              <td>EEE-1222</td>
-              <td>Electrical Circuits: Sessional</td>
-              <td>1.5</td>
-              <td>4.0</td>
-              <td>A+</td>
+              <tr>
+                <td>EEE-1222</td>
+                <td>Electrical Circuits: Sessional</td>
+                <td>1.5</td>
+                <td>4.0</td>
+                <td>A+</td>
               </tr>
               <tr>
                 <td>GED-1231</td>
@@ -580,12 +391,15 @@
                 <td>3.75</td>
                 <td>A</td>
               </tr>
-              
+            </tbody>
+            <tfoot class="table-light">
+              <tr>
+                <td colspan="2" class="fw-bold">Total</td>
+                <td>19.5</td>
+                <td class="fw-bold">3.51</td>
+                <td class="fw-bold">A-</td>
+              </tr>
             </tfoot>
-            <tbody>
-      <tr>
-        <td colspan="2"></td>  <td>19.5</td>          <td>3.51</td>          <td>A-</td>            </tr>
-    </tbody>
           </table>
         </div>
 
@@ -603,76 +417,84 @@
             </thead>
             <tbody>
               <tr>
-        <td>GED-2192</td>
-        <td>Statistics</td>
-        <td>2.0</td>
-        <td>4.00</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-1211</td>
-        <td>Structured Programming</td>
-        <td>3.0</td>
-        <td>4.00</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>GED 1161</td>
-        <td>Chemistry</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>CSE-2111</td>
-        <td>Data Structures</td>
-        <td>3.0</td>
-        <td>3.50</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>CSE-2112</td>
-        <td>Data Structures: Sessional</td>
-        <td>1.5</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>GED-2181</td>
-        <td>Introduction to Economics</td>
-        <td>2.0</td>
-        <td>3.0</td>
-        <td>B</td>
-      </tr>
-      <tr>
-        <td>MAT-2151</td>
-        <td>Coordinate Geometry and Vector Analysis</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>PHY-2171</td>
-        <td>Electromagnetism and Modern Physics</td>
-        <td>2.0</td>
-        <td>3.50</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>EEE-2121</td>
-        <td>Electronic Devices and Circuits</td>
-        <td>3.0</td>
-        <td>3.25</td>
-        <td>B+</td>
-      </tr>
-      <tr>
-        <td>EEE-2122</td>
-        <td>Electronic Devices and Circuit: Sessional</td>
-        <td>1.5</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
+                <td>GED-2192</td>
+                <td>Statistics</td>
+                <td>2.0</td>
+                <td>4.00</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-1211</td>
+                <td>Structured Programming</td>
+                <td>3.0</td>
+                <td>4.00</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>GED 1161</td>
+                <td>Chemistry</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>CSE-2111</td>
+                <td>Data Structures</td>
+                <td>3.0</td>
+                <td>3.50</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>CSE-2112</td>
+                <td>Data Structures: Sessional</td>
+                <td>1.5</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>GED-2181</td>
+                <td>Introduction to Economics</td>
+                <td>2.0</td>
+                <td>3.0</td>
+                <td>B</td>
+              </tr>
+              <tr>
+                <td>MAT-2151</td>
+                <td>Coordinate Geometry and Vector Analysis</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>PHY-2171</td>
+                <td>Electromagnetism and Modern Physics</td>
+                <td>2.0</td>
+                <td>3.50</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>EEE-2121</td>
+                <td>Electronic Devices and Circuits</td>
+                <td>3.0</td>
+                <td>3.25</td>
+                <td>B+</td>
+              </tr>
+              <tr>
+                <td>EEE-2122</td>
+                <td>Electronic Devices and Circuit: Sessional</td>
+                <td>1.5</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
             </tbody>
+            <tfoot class="table-light">
+              <tr>
+                <td colspan="2" class="fw-bold">Total</td>
+                <td>24</td>
+                <td class="fw-bold">3.55</td>
+                <td class="fw-bold">A-</td>
+              </tr>
+            </tfoot>
           </table>
         </div>
 
@@ -690,81 +512,87 @@
             </thead>
             <tbody>
               <tr>
-        <td>CSE-2222</td>
-        <td>Digital Logic Design: Sessional</td>
-        <td>1.5</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-2201</td>
-        <td>Theory of Computation</td>
-        <td>3.0</td>
-        <td>3.50</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>CSE-2231</td>
-        <td>Data Communication</td>
-        <td>3.0</td>
-        <td>3.50</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>MAT-2251</td>
-        <td>Complex Variable and Probability</td>
-        <td>2.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>GED-2192</td>
-        <td>Statistics</td>
-        <td>2.0</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-2212</td>
-        <td>Computer Algorithm & Complexity Analysis: Sessional</td>
-        <td>1.5</td>
-        <td>3.5</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>CSE-2211</td>
-        <td>Computer Algorithm & Complexity Analysis</td>
-        <td>3.0</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-2221</td>
-        <td>Digital Logic Design</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>GED 3211</td>
-        <td>Smart Village Studies</td>
-        <td>3.0</td>
-        <td>3.5</td>
-        <td>A-</td>
-      </tr>
-      <tr>
-        <td>GED-4251</td>
-        <td>Professional Practices and Ethics</td>
-        <td>2.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
+                <td>CSE-2222</td>
+                <td>Digital Logic Design: Sessional</td>
+                <td>1.5</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-2201</td>
+                <td>Theory of Computation</td>
+                <td>3.0</td>
+                <td>3.50</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>CSE-2231</td>
+                <td>Data Communication</td>
+                <td>3.0</td>
+                <td>3.50</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>MAT-2251</td>
+                <td>Complex Variable and Probability</td>
+                <td>2.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>GED-2192</td>
+                <td>Statistics</td>
+                <td>2.0</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-2212</td>
+                <td>Computer Algorithm & Complexity Analysis: Sessional</td>
+                <td>1.5</td>
+                <td>3.5</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>CSE-2211</td>
+                <td>Computer Algorithm & Complexity Analysis</td>
+                <td>3.0</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-2221</td>
+                <td>Digital Logic Design</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>GED 3211</td>
+                <td>Smart Village Studies</td>
+                <td>3.0</td>
+                <td>3.5</td>
+                <td>A-</td>
+              </tr>
+              <tr>
+                <td>GED-4251</td>
+                <td>Professional Practices and Ethics</td>
+                <td>2.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
             </tbody>
+            <tfoot class="table-light">
+              <tr>
+                <td colspan="2" class="fw-bold">Total</td>
+                <td>24</td>
+                <td class="fw-bold">3.72</td>
+                <td class="fw-bold">A-</td>
+              </tr>
+            </tfoot>
           </table>
         </div>
 
-        
-        
         <h3 class="mt-4">Fall - 2024</h3>
         <div class="table-responsive">
           <table class="table table-bordered">
@@ -779,54 +607,54 @@
             </thead>
             <tbody>
               <tr>
-        <td>CSE-3113</td>
-        <td>Database Management System</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>GED-1291</td>
-        <td>Principles of Accounting</td>
-        <td>2.0</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-3114</td>
-        <td>Database Management System: Sessional</td>
-        <td>1.5</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-3111</td>
-        <td>Object Oriented Programming</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>CSE-3115</td>
-        <td>Numerical Methods</td>
-        <td>3.0</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
-      <tr>
-        <td>CSE-3121</td>
-        <td>Computer Architecture and Design</td>
-        <td>3.0</td>
-        <td>3.75</td>
-        <td>A</td>
-      </tr>
-      <tr>
-        <td>CSE-3116</td>
-        <td>Numerical Methods: Sessional</td>
-        <td>1.5</td>
-        <td>4.0</td>
-        <td>A+</td>
-      </tr>
+                <td>CSE-3113</td>
+                <td>Database Management System</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>GED-1291</td>
+                <td>Principles of Accounting</td>
+                <td>2.0</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-3114</td>
+                <td>Database Management System: Sessional</td>
+                <td>1.5</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-3111</td>
+                <td>Object Oriented Programming</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>CSE-3115</td>
+                <td>Numerical Methods</td>
+                <td>3.0</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
+              <tr>
+                <td>CSE-3121</td>
+                <td>Computer Architecture and Design</td>
+                <td>3.0</td>
+                <td>3.75</td>
+                <td>A</td>
+              </tr>
+              <tr>
+                <td>CSE-3116</td>
+                <td>Numerical Methods: Sessional</td>
+                <td>1.5</td>
+                <td>4.0</td>
+                <td>A+</td>
+              </tr>
             </tbody>
             <tfoot class="table-light">
               <tr>
@@ -851,12 +679,32 @@
             selectedDept.textContent = this.textContent;
         });
     });
+
+    // Close navbar when clicking outside
+    document.addEventListener('click', function(e) {
+      const navbarCollapse = document.getElementById('navbarNav');
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      
+      if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+        navbarCollapse.classList.remove('show');
+      }
+    });
+
+    // Close navbar when clicking nav items
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (window.innerWidth < 992) { // Only on mobile
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
   </script>
   
 
-  <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
